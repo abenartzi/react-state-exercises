@@ -6,14 +6,39 @@ import React, { Component } from 'react';
  * Open the image to see the animation.
  */
 
+// let time = new Date().toLocaleTimeString('en-US',{hour12:false});
+
 class Clock extends Component {
+	constructor(props){
+		super(props);
+		this.state ={
+			date:new Date()
+		};
+	}
+
+	componentDidMount() {
+		this.timerID = setInterval(
+			() => this.tick(),
+			1000
+		);
+	}
+
+
+	componentWillUnmount() {
+		clearInterval(this.timerID)
+	}
+
 	render() {
 		return (
 			<div>
 				<h1>Clock</h1>
-				The time is:
+				The time is:{this.state.date.toLocaleTimeString('en-US',{hour12:false})}
 			</div>
 		);
+	}
+
+	tick() {
+		this.setState({date:new Date()})
 	}
 }
 

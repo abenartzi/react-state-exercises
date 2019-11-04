@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './FoodPicker.css'
 /**
  * See the component below? there are 4 fields: name, restaurant, meal and desert.
  * Once the user changes the form, it should be reflected on the "Your reservation" paragraph.
@@ -11,8 +11,8 @@ class FoodPicker extends Component {
 		this.state = {
 			nameContent: '',
 			mealContent: '',
-			value:'Frangelico'
-
+			value:'Frangelico',
+			checked: false
 
 		};
 	}
@@ -27,9 +27,13 @@ class FoodPicker extends Component {
 	mealTypeHandler(event) {
 		this.setState({mealContent:event.target.value})
 	}
+	checkedHandler() {
+		this.setState({checked:!this.state.checked})
+	}
 
 
 	render() {
+		const checkedStyle = this.state.checked ? '' : 'desert';
 		return (
 			<div>
 				<h1>Order special meal:</h1>
@@ -52,7 +56,7 @@ class FoodPicker extends Component {
 				</div>
 				<div>
 					Want a desert?
-					<input type="checkbox" />
+					<input type="checkbox" onChange={this.checkedHandler.bind(this)}/>
 				</div>
 
 				<div>
@@ -60,7 +64,7 @@ class FoodPicker extends Component {
 					Hi {this.state.nameContent}! <br />
 					We are glad you want to reserve a table at {this.state.value}.<br />
 					We will make sure that your favorite meal, {this.state.mealContent} is available.<br />
-					Additionally, our chef will make a special desert for you!<br />
+					<p className={checkedStyle}>Additionally, our chef will make a special desert for you!</p><br />
 				</div>
 			</div>
 		);

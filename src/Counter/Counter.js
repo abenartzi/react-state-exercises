@@ -34,16 +34,15 @@ class Counter extends Component {
 		});
 	}
 	increaseByTen() {
-		if(this.state.num >=20){
-			this.setState({num:20});
+		if (this.state.num + this.state.num > 20) {
+			this.setState({num: 20});
 			return;
 		}
-		this.setState(prevState => {
-			return {
-				num: prevState.num + 10
-			}
+		this.setState({
+			num:this.state.num + 10
 		})
 	}
+
 
 	render() {
 		return (

@@ -20,24 +20,26 @@ class Board extends Component {
 	}
 
 	clickHandlerOne() {
-		this.setState({borderColor1:true});
-
-			this.setState({borderColor2:false});
-			this.setState({borderColor3:false});
-
+		this.setState({
+		borderColor1:true,
+		borderColor2:false,
+		borderColor3:false
+		})
 	}
 	clickHandlerTwo() {
-		this.setState({borderColor2:true});
-
-			this.setState({borderColor1:false});
-			this.setState({borderColor3:false});
+		this.setState({
+		borderColor2:true,
+		borderColor1:false,
+		borderColor3:false
+		});
 
 	}
 	clickHandlerThree() {
-		this.setState({borderColor3:true});
-
-			this.setState({borderColor1:false});
-			this.setState({borderColor2:false});
+		this.setState({
+		borderColor3:true,
+		borderColor1:false,
+		borderColor2:false
+		});
 
 	}
 	render() {

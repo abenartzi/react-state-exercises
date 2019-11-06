@@ -9,7 +9,7 @@ import './Car.css';
 
 class Car extends Component {
 	constructor(props) {
-		super(props)
+		super(props);
 		this.state = {
 			value:"silver"
 		}

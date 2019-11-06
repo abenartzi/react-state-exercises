@@ -64,7 +64,7 @@ class FoodPicker extends Component {
 					Hi {this.state.nameContent}! <br />
 					We are glad you want to reserve a table at {this.state.value}.<br />
 					We will make sure that your favorite meal, {this.state.mealContent} is available.<br />
-					<p className={checkedStyle}>Additionally, our chef will make a special desert for you!</p><br />
+					<span className={checkedStyle}>Additionally, our chef will make a special desert for you!</span><br />
 				</div>
 			</div>
 		);
